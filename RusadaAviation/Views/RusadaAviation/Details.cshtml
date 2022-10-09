@@ -1,0 +1,60 @@
+﻿@model RusadaAviation.Models.AircraftDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AircraftDetail</legend>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Make)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Registration)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Registration)
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.Location)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Location)
+    </div>
+
+    <div class="display-label">
+        @Html.Label("Image")
+    </div>
+    <div class="editor-field">
+        <img alt="@Html.DisplayFor(model => model.Model)" src="data:image;base64,@System.Convert.ToBase64String(Model.ModelImage)" style="height:100px;width:100px;"/>
+    </div>
+
+    <div class="display-label">
+        @Html.LabelFor(model => model.DateTime)
+    </div>
+    <div class="display-field">
+        @if (ViewBag.PostedDate != null)
+        {
+            @ViewBag.PostedDate
+        }
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

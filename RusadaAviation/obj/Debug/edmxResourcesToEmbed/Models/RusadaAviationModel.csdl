@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RusadaAviationModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RusadaAviationEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AircraftDetails" EntityType="RusadaAviationModel.AircraftDetail" />
+  </EntityContainer>
+  <EntityType Name="AircraftDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Make" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Model" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Registration" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ModelImage" Type="String" MaxLength="Max" FixedLength="false" />
+    <Property Name="DateTime" Type="DateTime" Precision="3" />
+    <Property Type="String" Name="ModelImagePath" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
